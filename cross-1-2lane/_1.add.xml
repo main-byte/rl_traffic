@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2025-11-10 01:27:16 by Eclipse SUMO netedit Version 1.24.0
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <!-- Detectors -->
+    
+ <laneAreaDetector id="flow-E2C-0" lane="E2C_0" pos="-102" length="100" freq="1" file="out.xml"/>
+<laneAreaDetector id="flow-E2C-1" lane="E2C_1" pos="-102" length="100" freq="1" file="out.xml"/>
+<laneAreaDetector id="flow-N2C-0" lane="N2C_0" pos="-102" length="100" freq="1" file="out.xml"/>
+<laneAreaDetector id="flow-N2C-1" lane="N2C_1" pos="-102" length="100" freq="1" file="out.xml"/>
+<laneAreaDetector id="flow-S2C-0" lane="S2C_0" pos="-102" length="100" freq="1" file="out.xml"/>
+<laneAreaDetector id="flow-S2C-1" lane="S2C_1" pos="-102" length="100" freq="1" file="out.xml"/>
+<laneAreaDetector id="flow-W2C-0" lane="W2C_0" pos="-102" length="100" freq="1" file="out.xml"/>
+<laneAreaDetector id="flow-W2C-1" lane="W2C_1" pos="-102" length="100" freq="1" file="out.xml"/>
+
+
+    <!-- Exit detectors on the lanes going North -->
+    <inductionLoop id="exit-C2N-0" lane="C2N_0" pos="2.00" period="1.00" file="throughput.xml"/>
+    <inductionLoop id="exit-C2N-1" lane="C2N_1" pos="2.00" period="1.00" file="throughput.xml"/>
+
+    <!-- Exit detectors on the lanes going East -->
+    <inductionLoop id="exit-C2E-0" lane="C2E_0" pos="2.00" period="1.00" file="throughput.xml"/>
+    <inductionLoop id="exit-C2E-1" lane="C2E_1" pos="2.00" period="1.00" file="throughput.xml"/>
+
+    <!-- Exit detectors on the lanes going South -->
+    <inductionLoop id="exit-C2S-0" lane="C2S_0" pos="2.00" period="1.00" file="throughput.xml"/>
+    <inductionLoop id="exit-C2S-1" lane="C2S_1" pos="2.00" period="1.00" file="throughput.xml"/>
+
+    <!-- Exit detectors on the lanes going West -->
+    <inductionLoop id="exit-C2W-0" lane="C2W_0" pos="2.00" period="1.00" file="throughput.xml"/>
+    <inductionLoop id="exit-C2W-1" lane="C2W_1" pos="2.00" period="1.00" file="throughput.xml"/>
+    
+</additional>

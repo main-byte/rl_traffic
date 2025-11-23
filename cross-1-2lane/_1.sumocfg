@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+ 
+<input>
+<!-- network file generated using edges and nodes file  -->
+<net-file value="_1.net.xml" />
+
+<!-- route file  -->
+<route-files value="_1.rou.xml" />
+
+<!-- additonal file -->
+<additional-files value="_1.add.xml" />
+</input>
+
+<time>
+<!-- fun simulation for 10 min -->
+<end value="3600" />
+</time>
+<processing>
+<!-- it tells SUMO to WAIT for "2" second  for TRACI LIB  command from RL MODEL FILE -->
+
+<step-length value="1" />
+</processing>
+</configuration>
+
+

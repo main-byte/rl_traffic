@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    
+    <vTypeDistribution id="mixedTraffic">
+        <vType id="car" vClass="passenger" accel="2.6" decel="4.5" sigma="0.7" length="5" maxSpeed="40" color="1,1,0" probability="0.30" />
+        <vType id="motorcycle" vClass="motorcycle" accel="5.5" decel="5.0" sigma="0.8" length="2.5" maxSpeed="45" probability="0.50" />
+        <vType id="passengerRickshaw" vClass="passenger" guiShape="rickshaw" accel="2.0" decel="4.0" sigma="0.9" length="3" maxSpeed="30" color="1,1,1" probability="0.15" />
+        <vType id="bus" vClass="bus" accel="1.5" decel="3.0" sigma="0.6" length="12" maxSpeed="30" probability="0.025" />
+        <vType id="truck" vClass="truck" accel="1.0" decel="2.5" sigma="0.6" length="10" maxSpeed="25" probability="0.025" />
+    </vTypeDistribution>
+
+<!-- defininf routes -->
+<route id="route-N-S" edges="N2C C2S" />
+<route id="route-N-E" edges="N2C C2E" />
+<route id="route-N-W" edges="N2C C2W" />
+
+
+<route id="route-S-N" edges="S2C C2N" />
+<route id="route-S-E" edges="S2C C2E" />
+<route id="route-S-W" edges="S2C C2W" />
+
+<route id="route-E-S" edges="E2C C2S" />
+<route id="route-E-N" edges="E2C C2N" />
+<route id="route-E-W" edges="E2C C2W" />
+
+<route id="route-W-S" edges="W2C C2S" />
+<route id="route-W-E" edges="W2C C2E" />
+<route id="route-W-N" edges="W2C C2N" />
+
+
+<!-- generate traffic flows -->
+
+<flow id="flow-N-S" type="car" route="route-N-S" vehsPerHour="60" />
+<flow id="flow-S-N" type="car" route="route-S-N" vehsPerHour="70" />
+<flow id="flow-E-W" type="car" route="route-E-W" vehsPerHour="70" />
+<flow id="flow-W-E" type="car" route="route-W-E" vehsPerHour="80" />
+<!-- And light traffic on turning routes -->
+<flow id="flow-N-E" type="car" route="route-N-E" vehsPerHour="70" />
+<flow id="flow-W-S" type="car" route="route-W-S" vehsPerHour="100" />
+
+<!-- additional flows for other vehicle types -->
+<!-- motorcycles (heavy presence) -->
+<flow id="flow-N-S-motorcycle" type="motorcycle" route="route-N-S" vehsPerHour="80" />
+<flow id="flow-S-N-motorcycle" type="motorcycle" route="route-S-N" vehsPerHour="70" />
+<flow id="flow-E-W-motorcycle" type="motorcycle" route="route-E-W" vehsPerHour="80" />
+<flow id="flow-W-E-motorcycle" type="motorcycle" route="route-W-E" vehsPerHour="50" />
+<flow id="flow-N-E-motorcycle" type="motorcycle" route="route-N-E" vehsPerHour="70" />
+<flow id="flow-W-S-motorcycle" type="motorcycle" route="route-W-S" vehsPerHour="90" />
+
+<!-- passenger rickshaws (light) -->
+<flow id="flow-N-S-rickshaw" type="passengerRickshaw" route="route-N-S" vehsPerHour="50" />
+<flow id="flow-S-N-rickshaw" type="passengerRickshaw" route="route-S-N" vehsPerHour="50" />
+<flow id="flow-E-W-rickshaw" type="passengerRickshaw" route="route-E-W" vehsPerHour="40" />
+<flow id="flow-W-E-rickshaw" type="passengerRickshaw" route="route-W-E" vehsPerHour="60" />
+
+<!-- buses (very light) -->
+<flow id="flow-N-S-bus" type="bus" route="route-N-S" vehsPerHour="12" />
+<flow id="flow-S-N-bus" type="bus" route="route-S-N" vehsPerHour="10" />
+<flow id="flow-E-W-bus" type="bus" route="route-E-W" vehsPerHour="8" />
+<flow id="flow-W-E-bus" type="bus" route="route-W-E" vehsPerHour="8" />
+
+<!-- trucks (light) -->
+<flow id="flow-N-S-truck" type="truck" route="route-N-S" vehsPerHour="5" />
+<flow id="flow-S-N-truck" type="truck" route="route-S-N" vehsPerHour="2" />
+<flow id="flow-E-W-truck" type="truck" route="route-E-W" vehsPerHour="2" />
+<flow id="flow-W-E-truck" type="truck" route="route-W-E" vehsPerHour="1" />
+
+<!-- left/right turn flows for cars -->
+<flow id="flow-N-W-car" type="car" route="route-N-W" vehsPerHour="50" />
+<flow id="flow-S-E-car" type="car" route="route-S-E" vehsPerHour="60" />
+<flow id="flow-E-N-car" type="car" route="route-E-N" vehsPerHour="40" />
+<flow id="flow-E-S-car" type="car" route="route-E-S" vehsPerHour="60" />
+<flow id="flow-W-N-car" type="car" route="route-W-N" vehsPerHour="50" />
+
+<!-- left/right turn flows for motorcycles -->
+<flow id="flow-N-W-motorcycle" type="motorcycle" route="route-N-W" vehsPerHour="40" />
+<flow id="flow-S-E-motorcycle" type="motorcycle" route="route-S-E" vehsPerHour="60" />
+<flow id="flow-S-W-motorcycle" type="motorcycle" route="route-S-W" vehsPerHour="30" />
+<flow id="flow-E-N-motorcycle" type="motorcycle" route="route-E-N" vehsPerHour="70" />
+<flow id="flow-E-S-motorcycle" type="motorcycle" route="route-E-S" vehsPerHour="70" />
+<flow id="flow-W-N-motorcycle" type="motorcycle" route="route-W-N" vehsPerHour="60" />
+
+<!-- left/right turn flows for passenger rickshaws -->
+<flow id="flow-N-W-rickshaw" type="passengerRickshaw" route="route-N-W" vehsPerHour="20" />
+<flow id="flow-S-E-rickshaw" type="passengerRickshaw" route="route-S-E" vehsPerHour="25" />
+<flow id="flow-E-N-rickshaw" type="passengerRickshaw" route="route-E-N" vehsPerHour="20" />
+<flow id="flow-W-N-rickshaw" type="passengerRickshaw" route="route-W-N" vehsPerHour="20" />
+
+<!-- a few turning flows for buses and trucks (low frequency) -->
+<flow id="flow-N-W-bus" type="bus" route="route-N-W" vehsPerHour="2" />
+<flow id="flow-S-E-bus" type="bus" route="route-S-E" vehsPerHour="2" />
+<flow id="flow-E-N-truck" type="truck" route="route-E-N" vehsPerHour="5" />
+<flow id="flow-W-S-truck" type="truck" route="route-W-S" vehsPerHour="5" />
+
+</routes>
